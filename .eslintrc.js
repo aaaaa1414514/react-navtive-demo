@@ -1,9 +1,7 @@
 module.exports = {
   root: true,
   extends: '@react-native-community',
-  eslintConfig: {
-    rules: {
-      semi: [0]
-    }
+  rules: {
+    semi: [2, 'never']
   }
 }
