@@ -1,10 +1,10 @@
-import * as React from 'react';
-import Router from './src/router/index';
-import {NavigationContainer} from '@react-navigation/native';
-import {NativeBaseProvider, extendTheme} from 'native-base';
-import newTheme from './src/theme/theme';
+import * as React from 'react'
+import Router from './src/router/index'
+import {NavigationContainer} from '@react-navigation/native'
+import {NativeBaseProvider, extendTheme} from 'native-base'
+import newTheme from './src/theme/theme'
 
-const theme = extendTheme({colors: newTheme});
+const theme = extendTheme({colors: newTheme})
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
         <Router />
       </NavigationContainer>
     </NativeBaseProvider>
-  );
+  )
 }
 
-export default App;
+export default App

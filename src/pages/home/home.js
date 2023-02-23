@@ -1,48 +1,39 @@
-import React, {Component} from 'react'
-import {Box, Button} from 'native-base'
-import {Flex, Center} from 'native-base'
+import React from 'react'
+import {Box, VStack, Center} from 'native-base'
+import {TouchableWithoutFeedback} from 'react-native'
+// import {navigation} from '../../utils/utils'
+import {useNavigation} from '@react-navigation/native'
+export default function () {
+  const navigation = useNavigation()
 
-class Home extends Component {
-  constructor(props) {
-    super(props)
-  }
+  const routeArr = [{title: 'ChatGPT', path: 'ChatGPT'}]
 
-  render() {
-    const {navigation} = this.props
-
-    return (
-      <Box bg={['red.400', 'blue.400']} flex={1}>
-        <Flex direction="row" mb="2.5" mt="1.5">
-          <Center size="16" bg="primary.100" _text={{color: 'coolGray.800'}}>
-            100
-          </Center>
-        </Flex>
-        <Flex direction="row" mb="2.5" mt="1.5">
-          <Center size="16" bg="primary.100" _text={{color: 'coolGray.800'}}>
-            100
-          </Center>
-        </Flex>
-        <Flex direction="row" mb="2.5" mt="1.5">
-          <Center size="16" bg="primary.100" _text={{color: 'coolGray.800'}}>
-            100
-          </Center>
-        </Flex>
-
-        <Flex direction="row" mb="2.5" mt="1.5">
-          <Center size="16" bg="primary.100" _text={{color: 'coolGray.800'}}>
-            100
-          </Center>
-        </Flex>
-        <Flex direction="row" mb="2.5" mt="1.5">
-          <Center size="16" bg="primary.100" _text={{color: 'coolGray.800'}}>
-            100
-          </Center>
-        </Flex>
-
-        <Button onPress={() => navigation.push('详情')}>Click Me</Button>
-      </Box>
-    )
-  }
+  return (
+    <Box safeArea safeAreaTop="0" bg={['red.400', 'blue.400']} flex={1}>
+      <Center w="100%" h="100%">
+        <VStack space={4} alignItems="center">
+          {routeArr.map(i => (
+            <TouchableWithoutFeedback
+              onPress={() => {
+                navigation.push(i.path)
+              }}>
+              <Center
+                _text={{
+                  color: 'white',
+                  fontWeight: 'bold',
+                  fontSize: 24
+                }}
+                w="64"
+                h="20"
+                bg="secondary.300"
+                rounded="md"
+                shadow={3}>
+                chatGPT
+              </Center>
+            </TouchableWithoutFeedback>
+          ))}
+        </VStack>
+      </Center>
+    </Box>
+  )
 }
-
-export default Home
