@@ -4,14 +4,21 @@
  *
  * @format
  */
+const path = require('path')
 
 module.exports = {
   transformer: {
     getTransformOptions: async () => ({
       transform: {
         experimentalImportSupport: false,
-        inlineRequires: true,
-      },
-    }),
+        inlineRequires: true
+      }
+    })
   },
-};
+  resolver: {
+    alias: {
+      '@pages': path.resolve(__dirname, 'src/pages')
+    }
+  },
+  watchFolders: [path.resolve(__dirname, 'src')]
+}
