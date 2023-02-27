@@ -15,9 +15,9 @@ export default ({title, children}) => {
     }, 1500)
   }
 
-  useEffect(() => {
-    console.log('load data')
-  })
+  // useEffect(() => {
+  //   console.log('load data')
+  // })
 
   function handleLoadMore() {
     console.log('load more')

@@ -1,10 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {Box, Text, CheckIcon, HStack, Center, Pressable} from 'native-base'
 
 export default () => {
-  const [selected, setSelected] = React.useState(1)
+  const [selected, setSelected] = useState(1)
   return (
-    <Box flex={1} bg="white" safeAreaTop="0" width="100%">
+    <Box width="100%">
       <HStack bg="primary.600" alignItems="center" safeAreaBottom shadow={6}>
         <Pressable
           cursor="pointer"

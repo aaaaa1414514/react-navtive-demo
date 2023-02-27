@@ -1,18 +1,19 @@
 import React from 'react'
 import {Box, VStack, Center} from 'native-base'
 import {TouchableWithoutFeedback} from 'react-native'
-// import {navigation} from '../../utils/utils'
 import {useNavigation} from '@react-navigation/native'
-import axios from 'axios'
 
 export default function () {
   const navigation = useNavigation()
 
-  const routeArr = [{title: 'ChatGPT', path: 'ChatGPT'}]
+  const routeArr = [
+    {title: 'ChatGPT', path: 'ChatGPT'},
+    {title: 'detail', path: '详情'}
+  ]
 
   return (
-    <Box safeArea safeAreaTop="0" bg={['primary.400', 'blue.400']} flex={1}>
-      <Center w="100%" h="100%">
+    <Box bg={['primary.400', 'blue.400']} flex={1}>
+      <Center flex={1} w="100%" h="100%">
         <VStack space={4} alignItems="center">
           {routeArr.map(i => (
             <TouchableWithoutFeedback
@@ -30,7 +31,7 @@ export default function () {
                 bg="primary.600"
                 rounded="md"
                 shadow={3}>
-                chatGPT
+                {i.title}
               </Center>
             </TouchableWithoutFeedback>
           ))}
