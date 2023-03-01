@@ -10,20 +10,24 @@ export default () => {
     {name: '我的', icon: 'user'}
   ]
 
+  function selectedItem(item, index) {
+    setSelected(index)
+  }
+
   return (
     <Box width="100%">
       <HStack bg="#fff" alignItems="center" safeAreaBottom shadow={6}>
-        {tabbar.map((i, index) => (
+        {tabbar.map((item, index) => (
           <Pressable
             cursor="pointer"
             opacity={selected === index ? 1 : 0.5}
             py="3"
             flex={1}
-            onPress={() => setSelected(index)}>
+            onPress={() => selectedItem(item, index)}>
             <Center>
-              <Icon name={i.icon} size={30} color="#4F8EF7" />
+              <Icon name={item.icon} size={30} color="#4F8EF7" />
               <Text color="#000" fontSize="12">
-                {i.name}
+                {item.name}
               </Text>
             </Center>
           </Pressable>
