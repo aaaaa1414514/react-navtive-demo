@@ -1,6 +1,7 @@
 import React from 'react'
 import {Box, Heading} from 'native-base'
 import Calendar from './calendar'
+import Tabs from '../../../../components/tabs'
 export default ({mt}) => {
   return (
     <Box mt={mt}>
@@ -11,6 +12,8 @@ export default ({mt}) => {
 
         <Calendar />
       </Box>
+
+      <Tabs mt="16px" />
     </Box>
   )
 }
