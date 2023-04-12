@@ -1,0 +1,5 @@
+cd ios  
+bundle install           // 安装ruby依赖
+rbenv shell 2.7.6        // 修改ruby当前在shell的版本
+eval "$(rbenv init -)"   // 修改ruby当前在shell的版本
+pod install              // 安装ios包的依赖
